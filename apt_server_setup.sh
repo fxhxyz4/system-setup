@@ -19,7 +19,7 @@ log "Upgrading installed packages"
 sudo DEBIAN_FRONTEND=noninteractive apt upgrade -y
 
 log "Installing git, ufw, fastfetch, openssh-server"
-sudo apt install -y git ufw fastfetch openssh-server
+sudo xargs -a deps.txt apt install -y
 
 log "Enabling SSH service"
 sudo systemctl enable ssh
